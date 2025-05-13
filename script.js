@@ -1,16 +1,11 @@
 function checkData(courseInfo, assignmentGroup, submissions) {
     if (!courseInfo || typeof courseInfo !== "object" || typeof courseInfo.id !== "number" || typeof courseInfo.name !== "string") {
         throw new Error("CourseInfo is not right! Needs id (number) and name (string).");
-    }
+    }  
 
     if (
-        !assignmentGroup ||
-        typeof assignmentGroup !== "object" ||
-        typeof assignmentGroup.id !== "number" ||
-        typeof assignmentGroup.name !== "string" ||
-        typeof assignmentGroup.course_id !== "number" ||
-        typeof assignmentGroup.group_weight !== "number" ||
-        !Array.isArray(assignmentGroup.assignments)
+        !assignmentGroup ||typeof assignmentGroup !== "object" ||typeof assignmentGroup.id !== "number" ||typeof assignmentGroup.name !== "string" ||
+        typeof assignmentGroup.course_id !== "number" ||typeof assignmentGroup.group_weight !== "number" ||!Array.isArray(assignmentGroup.assignments)
     ) {
         throw new Error("AssignmentGroup is wrong! Needs id, name, course_id, group_weight, and assignments array.");
     }
@@ -151,19 +146,19 @@ const assignmentGroup = {
         {
             id: 1,
             name: "Assignment 1",
-            due_at: "2025-05-10T23:59:59", 
+            due_at: "2025-05-10", 
             points_possible: 100,
         },
         {
             id: 2,
             name: "Assignment 2",
-            due_at: "2025-05-15T23:59:59", 
+            due_at: "2025-05-15", 
             points_possible: 200,
         },
         {
             id: 3,
             name: "Assignment 3",
-            due_at: "2025-06-01T23:59:59", 
+            due_at: "2025-06-01", 
             points_possible: 50,
         },
     ],
@@ -174,7 +169,7 @@ const submissions = [
         learner_id: 1,
         assignment_id: 1,
         submission: {
-            submitted_at: "2025-05-09T10:00:00", 
+            submitted_at: "2025-05-09", 
             score: 80,
         },
     },
@@ -182,7 +177,7 @@ const submissions = [
         learner_id: 1,
         assignment_id: 2,
         submission: {
-            submitted_at: "2025-05-16T10:00:00", 
+            submitted_at: "2025-05-08", 
             score: 180,
         },
     },
@@ -190,7 +185,7 @@ const submissions = [
         learner_id: 2,
         assignment_id: 1,
         submission: {
-            submitted_at: "2025-05-09T10:00:00", 
+            submitted_at: "2025-05-09", 
             score: 90,
         },
     },
